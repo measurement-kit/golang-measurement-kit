@@ -3,8 +3,8 @@ package mk
 /*
 #include <measurement_kit/ffi.h>
 */
-// #cgo unix CFLAGS: -I${SRCDIR}/include
-// #cgo unix LDFLAGS: -lc++
+// #cgo darwin CFLAGS: -I${SRCDIR}/libs/include
+// #cgo darwin LDFLAGS: -lc++
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libevent-darwin-amd64.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libevent_openssl-darwin-amd64.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libevent_pthreads-darwin-amd64.a
