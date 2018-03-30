@@ -3,8 +3,8 @@ package mk
 /*
 #include <measurement_kit/ffi.h>
 */
-// #cgo CFLAGS: -I${SRCDIR}/include
-// #cgo LDFLAGS: -lc++
+// #cgo CFLAGS: -I${SRCDIR}/libs/include
+// #cgo darwin LDFLAGS: -lc++
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libevent-darwin-amd64.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libevent_openssl-darwin-amd64.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libevent_pthreads-darwin-amd64.a
@@ -12,6 +12,8 @@ package mk
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libssl-darwin-amd64.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libGeoIP-darwin-amd64.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/libmeasurement_kit-darwin-amd64.a
+// #cgo windows,amd64 LDFLAGS: -L${SRCDIR}/libs/windows/amd64
+// #cgo windows LDFLAGS: -lmeasurement_kit
 import "C"
 
 import (
