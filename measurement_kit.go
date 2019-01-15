@@ -168,7 +168,7 @@ func (nt *Nettest) Run() error {
 		return err
 	}
 
-	task := C.mk_task_start(tdp)
+	task := C.mk_nettest_start(tdp)
 	defer C.mk_task_destroy(task)
 	if task == nil {
 		return errors.New("Got a null task data from mk_task_start")

@@ -6,13 +6,6 @@ import (
 	"unsafe"
 )
 
-func mkBoolOption(v bool) int {
-	if v == true {
-		return 1
-	}
-	return 0
-}
-
 // TaskData contains the measurement_kit task_data structure
 type TaskData struct {
 	DisabledEvents []string              `json:"disabled_events,omitempty"`
@@ -27,12 +20,12 @@ type TaskData struct {
 }
 
 type measurementKitOptions struct {
-	SaveRealProbeIP  int     `json:"save_real_probe_ip,omitempty"`
-	SaveRealProbeASN int     `json:"save_real_probe_asn,omitempty"`
-	SaveRealProbeCC  int     `json:"save_real_probe_cc,omitempty"`
-	NoCollector      int     `json:"no_collector,omitempty"`
-	NoFileReport     int     `json:"no_file_report,omitempty"`
-	RandomizeInput   int     `json:"randomize_input,omitempty"`
+	SaveRealProbeIP  bool    `json:"save_real_probe_ip,omitempty"`
+	SaveRealProbeASN bool    `json:"save_real_probe_asn,omitempty"`
+	SaveRealProbeCC  bool    `json:"save_real_probe_cc,omitempty"`
+	NoCollector      bool    `json:"no_collector,omitempty"`
+	NoFileReport     bool    `json:"no_file_report,omitempty"`
+	RandomizeInput   bool    `json:"randomize_input,omitempty"`
 	SoftwareName     string  `json:"software_name,omitempty"`
 	SoftwareVersion  string  `json:"software_version,omitempty"`
 	ProbeCC          string  `json:"probe_cc,omitempty"`
@@ -57,12 +50,12 @@ func MakeTaskData(nt *Nettest) (*TaskData, error) {
 		Name:     nt.Name,
 		LogLevel: logLevel,
 		Options: measurementKitOptions{
-			SaveRealProbeIP:  mkBoolOption(nt.Options.IncludeIP),
-			SaveRealProbeASN: mkBoolOption(nt.Options.IncludeASN),
-			SaveRealProbeCC:  mkBoolOption(nt.Options.IncludeCountry),
-			NoCollector:      mkBoolOption(nt.Options.DisableCollector),
-			NoFileReport:     mkBoolOption(nt.Options.DisableReportFile),
-			RandomizeInput:   mkBoolOption(nt.Options.RandomizeInput),
+			SaveRealProbeIP:  nt.Options.IncludeIP,
+			SaveRealProbeASN: nt.Options.IncludeASN,
+			SaveRealProbeCC:  nt.Options.IncludeCountry,
+			NoCollector:      nt.Options.DisableCollector,
+			NoFileReport:     nt.Options.DisableReportFile,
+			RandomizeInput:   nt.Options.RandomizeInput,
 			ProbeASN:         nt.Options.ProbeASN,
 			ProbeCC:          nt.Options.ProbeCC,
 			ProbeIP:          nt.Options.ProbeIP,
