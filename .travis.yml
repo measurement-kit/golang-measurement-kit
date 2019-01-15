@@ -6,4 +6,4 @@ go:
 install:
 - ./download-libs.sh
 script:
-- go test -v ./...
+- make test

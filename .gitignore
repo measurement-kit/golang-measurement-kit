@@ -2,4 +2,6 @@
 *.njson
 /ndt
 /web_connectivity
+/testdata/GeoLite2-ASN.mmdb
+/testdata/GeoLite2-Country.mmdb
 /libs/*
