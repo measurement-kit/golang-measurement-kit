@@ -14,7 +14,7 @@ func TestFacebookMessenger(t *testing.T) {
 		OutputPath: "facebook-result.jsonl",
 	}
 	nt.On("*", func(e mk.Event) {
-		fmt.Println(e)
+		fmt.Printf("%v\n", e)
 	})
 	nt.Run()
 }
