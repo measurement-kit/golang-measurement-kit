@@ -4,23 +4,27 @@ package mk
 #include <measurement_kit/ffi.h>
 */
 // #cgo darwin LDFLAGS: -lc++
-// #cgo darwin,amd64 CFLAGS: -I${SRCDIR}/libs/macos/measurement-kit/0.9.0-alpha.2-1/x86_64/include/
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/macos/measurement-kit/0.9.0-alpha.2-1/x86_64/lib/libmeasurement_kit.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/macos/geoip-api-c/1.6.12-3/x86_64/lib/libGeoIP.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/macos/libressl/2.6.4-4/x86_64/lib/libssl.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/macos/libressl/2.6.4-4/x86_64/lib/libcrypto.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/macos/libevent/2.1.8-4/x86_64/lib/libevent.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/macos/libevent/2.1.8-4/x86_64/lib/libevent_openssl.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/macos/libevent/2.1.8-4/x86_64/lib/libevent_pthreads.a
+// #cgo darwin,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/macos/measurement-kit/0.9.1+1/x86_64/include
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/curl/7.63.0+2/x86_64/lib/libcurl.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_extra.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_core.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_openssl.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_pthreads.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libressl/2.8.3+1/x86_64/lib/libcrypto.a
+// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libressl/2.8.3+1/x86_64/lib/libssl.a
 //
 // #cgo windows LDFLAGS: -static
-// #cgo windows,amd64 CFLAGS: -I${SRCDIR}/libs/mingw/measurement-kit/0.9.0-alpha.2-1/x86_64/include/
-// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/mingw/measurement-kit/0.9.0-alpha.2-1/x86_64/lib/libmeasurement_kit.a
-// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/mingw/geoip-api-c/1.6.12-3/x86_64/lib/libGeoIP.a
-// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/mingw/libressl/2.6.4-4/x86_64/lib/libssl.a
-// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/mingw/libressl/2.6.4-4/x86_64/lib/libcrypto.a
-// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/mingw/libevent/2.1.8-4/x86_64/lib/libevent.a
-// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/mingw/libevent/2.1.8-4/x86_64/lib/libevent_openssl.a
+// #cgo windows,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/mingw/measurement-kit/0.9.1+1/x86_64/include
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/curl/7.63.0+2/x86_64/lib/libcurl.a
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libevent/2.1.8+4/x86_64/lib/libevent_extra.a
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libevent/2.1.8+4/x86_64/lib/libevent_core.a
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libevent/2.1.8+4/x86_64/lib/libevent_openssl.a
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libressl/2.8.3+1/x86_64/lib/libcrypto.a
+// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libressl/2.8.3+1/x86_64/lib/libssl.a
 // #cgo windows,amd64 LDFLAGS: -lws2_32 -lstdc++
 //
 // #cgo linux,amd64 LDFLAGS: -lstdc++ -lm
