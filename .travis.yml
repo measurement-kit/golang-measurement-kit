@@ -1,0 +1,9 @@
+os: osx
+language: go
+go:
+- 1.9.x
+- 1.x
+install:
+- ./download-libs.sh
+script:
+- go test -v ./...
