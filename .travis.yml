@@ -1,6 +1,8 @@
-os:
-- osx
-- linux
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+    - os: osx
 language: go
 go:
 - 1.9.x
