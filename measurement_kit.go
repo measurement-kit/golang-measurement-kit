@@ -28,24 +28,16 @@ package mk
 // #cgo windows,amd64 LDFLAGS: -lws2_32 -lstdc++
 //
 // #cgo linux,amd64 LDFLAGS: -lstdc++ -lm
-// #cgo linux,amd64 CFLAGS: -I${SRCDIR}/libs/linux/measurement-kit/0.9.0-alpha.2-2/x86_64/include/
-// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/linux/measurement-kit/0.9.0-alpha.2-2/x86_64/lib/libmeasurement_kit.a
-// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/linux/geoip-api-c/1.6.12-3/x86_64/lib/libGeoIP.a
-// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/linux/libressl/2.6.4-4/x86_64/lib/libssl.a
-// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/linux/libressl/2.6.4-4/x86_64/lib/libcrypto.a
-// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/linux/libevent/2.1.8-4/x86_64/lib/libevent.a
-// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/linux/libevent/2.1.8-4/x86_64/lib/libevent_openssl.a
-// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/linux/libevent/2.1.8-4/x86_64/lib/libevent_pthreads.a
-//
-// #cgo linux,arm LDFLAGS: -lstdc++ -lm
-// #cgo linux,arm CFLAGS: -I${SRCDIR}/libs/linux_armv7/measurement-kit/0.9.0-alpha.2-1/armv7/include/
-// #cgo linux,arm LDFLAGS: ${SRCDIR}/libs/linux_armv7/measurement-kit/0.9.0-alpha.2-1/armv7/lib/libmeasurement_kit.a
-// #cgo linux,arm LDFLAGS: ${SRCDIR}/libs/linux_armv7/geoip-api-c/1.6.12-3/armv7/lib/libGeoIP.a
-// #cgo linux,arm LDFLAGS: ${SRCDIR}/libs/linux_armv7/libressl/2.6.4-4/armv7/lib/libssl.a
-// #cgo linux,arm LDFLAGS: ${SRCDIR}/libs/linux_armv7/libressl/2.6.4-4/armv7/lib/libcrypto.a
-// #cgo linux,arm LDFLAGS: ${SRCDIR}/libs/linux_armv7/libevent/2.1.8-4/armv7/lib/libevent.a
-// #cgo linux,arm LDFLAGS: ${SRCDIR}/libs/linux_armv7/libevent/2.1.8-4/armv7/lib/libevent_openssl.a
-// #cgo linux,arm LDFLAGS: ${SRCDIR}/libs/linux_armv7/libevent/2.1.8-4/armv7/lib/libevent_pthreads.a
+// #cgo linux,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/linux/measurement-kit/0.9.1+1/x86_64/include
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/curl/7.63.0+2/x86_64/lib/libcurl.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libevent/2.1.8+4/x86_64/lib/libevent_extra.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libevent/2.1.8+4/x86_64/lib/libevent_core.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libevent/2.1.8+4/x86_64/lib/libevent_openssl.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libevent/2.1.8+4/x86_64/lib/libevent_pthreads.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libressl/2.8.3+1/x86_64/lib/libcrypto.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libressl/2.8.3+1/x86_64/lib/libssl.a
+// #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
 import "C"
 
 import (

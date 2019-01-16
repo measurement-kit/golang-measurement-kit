@@ -14,7 +14,8 @@ arch_map = {
 
 plat_map = {
     "macos": "darwin",
-    "mingw": "windows"
+    "mingw": "windows",
+    "linux": "linux"
 }
 
 def print_cgo_line_include(platform, pkg_name, arch):

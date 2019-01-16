@@ -13,6 +13,11 @@ b1d25568e5f2d00647dcef58a4dd06d717b1001980b1c092e9a3bc55b393e559  mingw-libevent
 2b17a7769cd5e70172ad9ae1374eab9f7fec01e13567b40f1d0b252ff3588f95  mingw-libmaxminddb-1.3.2+3.tar.gz
 7c62fae040b242ffa3de5fc4635de69ac440af2b4401b016fc0e197c7abe3962  mingw-libressl-2.8.3+1.tar.gz
 8cad84a3253b14377384148163eccf1c26765a65d3c4487d47726b9a08a9bbc7  mingw-measurement-kit-0.9.1+1.tar.gz
+1d1ec6329025f36d11e0bbb52c3f9d01587d3210fe216a5e05b8dc44e7bfeea4  linux-curl-7.63.0+2.tar.gz
+6fd89185d913e6aa4947195e938d0f8e48835cb4dd71e05310f26737651623a3  linux-libevent-2.1.8+4.tar.gz
+eef314208adb8898d58f1e809ff7699de203ae341a5c70109051e536cb7f1ba1  linux-libmaxminddb-1.3.2+3.tar.gz
+d505e8ebb063cd6ea5d548cdc3873e37530c8e624b40d8b1f181237e01511e21  linux-libressl-2.8.3+1.tar.gz
+551dc1050148e6c6ee901b0dec65f77cbf84606684768441cdbd12f81c42ee5f  linux-measurement-kit-0.9.1+1.tar.gz
 END
 )
 
@@ -53,13 +58,10 @@ if [ "$TARGET_PLATFORM" == "all" ];then
     download_libs macos
     download_libs mingw
     download_libs linux
-    download_libs linux_armv7
 elif [ "$TARGET_PLATFORM" == "macos" ];then
     download_libs macos
 elif [ "$TARGET_PLATFORM" == "linux" ];then
     download_libs linux
-elif [ "$TARGET_PLATFORM" == "linux_armv7" ];then
-    download_libs linux_armv7
 elif [ "$TARGET_PLATFORM" == "mingw" ];then
     download_libs mingw
 else
