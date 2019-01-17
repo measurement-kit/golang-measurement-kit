@@ -14,6 +14,8 @@ package mk
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_extra.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_pthreads.a
 //
+// #cgo windows LDFLAGS: -static
+// #cgo windows,amd64 LDFLAGS: -lws2_32
 // #cgo windows,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/mingw/measurement-kit/0.9.1+1/x86_64/include
 // #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
 // #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
@@ -25,6 +27,7 @@ package mk
 // #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libevent/2.1.8+4/x86_64/lib/libevent_extra.a
 // #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libevent/2.1.8+4/x86_64/lib/libevent_pthreads.a
 //
+// #cgo linux,amd64 LDFLAGS: -lm
 // #cgo linux,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/linux/measurement-kit/0.9.1+1/x86_64/include
 // #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
 // #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
