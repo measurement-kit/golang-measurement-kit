@@ -1,4 +1,5 @@
 import os
+from glob import glob
 
 pkgs = [
     "curl",
@@ -18,33 +19,49 @@ plat_map = {
     "linux": "linux"
 }
 
-def print_cgo_line_include(platform, pkg_name, arch):
-    pkg_root = os.path.join("libs", "MK_DIST", platform, pkg_name)
-    versions = list(filter(lambda x: x != ".DS_Store", os.listdir(pkg_root)))
-    version = versions[0]
-    includepath = os.path.join(pkg_root, version, arch, "include")
-    line = "// #cgo {plat},{arch} CFLAGS: -I${{SRCDIR}}/{includepath}".format(plat=plat_map[platform], arch=arch_map[arch],includepath=includepath)
-    print(line)
+tmpl = """// #cgo {platform},{arch} CFLAGS: -I${{SRCDIR}}/libs/MK_DIST/{mk_platform}/measurement-kit/{measurement_kit_version}/{mk_arch}/include
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/measurement-kit/{measurement_kit_version}/{mk_arch}/lib/libmeasurement_kit.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/libmaxminddb/{libmaxminddb_version}/{mk_arch}/lib/libmaxminddb.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/curl/{curl_version}/{mk_arch}/lib/libcurl.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/libevent/{libevent_version}/{mk_arch}/lib/libevent_openssl.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/libressl/{libressl_version}/{mk_arch}/lib/libssl.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/libressl/{libressl_version}/{mk_arch}/lib/libcrypto.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/libevent/{libevent_version}/{mk_arch}/lib/libevent_core.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/libevent/{libevent_version}/{mk_arch}/lib/libevent_extra.a
+// #cgo {platform},{arch} LDFLAGS: ${{SRCDIR}}/libs/MK_DIST/{mk_platform}/libevent/{libevent_version}/{mk_arch}/lib/libevent_pthreads.a"""
 
-def print_cgo_line_lib(platform, pkg_name, arch):
-    pkg_root = os.path.join("libs", "MK_DIST", platform, pkg_name)
-    versions = list(filter(lambda x: x != ".DS_Store", os.listdir(pkg_root)))
-    assert len(versions) == 1, "Duplicate versions. Try cleaning libs"
-    version = versions[0]
-    lib_root = os.path.join(pkg_root, version, arch, "lib")
-    lib_names = os.listdir(lib_root)
+def get_package_versions():
+    pkg_versions = {}
 
-    for lib_name in lib_names:
-        libpath = os.path.join(lib_root, lib_name)
-        line = "// #cgo {plat},{arch} LDFLAGS: ${{SRCDIR}}/{libpath}".format(plat=plat_map[platform], arch=arch_map[arch],libpath=libpath)
-        print(line)
+    plat_root = glob('libs/MK_DIST/*')[0]
+    pkgs_paths = glob(os.path.join(plat_root, '*'))
+    for pkg_path in pkgs_paths:
+        pkg_name = os.path.basename(pkg_path)
+        versions = list(filter(lambda x: x != ".DS_Store", os.listdir(pkg_path)))
+        assert len(versions) == 1
+        pkg_versions[pkg_name.replace('-', '_') + '_version'] = versions[0]
+    return pkg_versions
+
+def get_special_cgo_lines(arch, platform):
+    if arch == "windows" and platform == "amd64":
+        return """// #cgo windows LDFLAGS: -static
+// #cgo windows,amd64 LDFLAGS: -lws2_32"""
+
+    if platform == "linux" and platform == "amd64":
+        return "// #cgo linux,amd64 LDFLAGS: -lm"
 
 def main():
-    for platform in plat_map.keys():
-        print_cgo_line_include(platform, "measurement-kit", "x86_64")
-        for pkg in pkgs:
-            print_cgo_line_lib(platform, pkg, "x86_64")
-        print("\n\n")
+    package_versions = get_package_versions()
+    for mk_arch, arch in arch_map.items():
+        for mk_platform, platform in plat_map.items():
+            print(tmpl.format(
+                mk_platform=mk_platform,
+                platform=platform,
+                mk_arch=mk_arch,
+                arch=arch,
+                **package_versions
+            ))
+            print("//")
 
 if __name__ == "__main__":
     main()
