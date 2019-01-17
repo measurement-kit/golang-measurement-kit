@@ -13,11 +13,11 @@ b1d25568e5f2d00647dcef58a4dd06d717b1001980b1c092e9a3bc55b393e559  mingw-libevent
 2b17a7769cd5e70172ad9ae1374eab9f7fec01e13567b40f1d0b252ff3588f95  mingw-libmaxminddb-1.3.2+3.tar.gz
 7c62fae040b242ffa3de5fc4635de69ac440af2b4401b016fc0e197c7abe3962  mingw-libressl-2.8.3+1.tar.gz
 8cad84a3253b14377384148163eccf1c26765a65d3c4487d47726b9a08a9bbc7  mingw-measurement-kit-0.9.1+1.tar.gz
-1d1ec6329025f36d11e0bbb52c3f9d01587d3210fe216a5e05b8dc44e7bfeea4  linux-curl-7.63.0+2.tar.gz
-6fd89185d913e6aa4947195e938d0f8e48835cb4dd71e05310f26737651623a3  linux-libevent-2.1.8+4.tar.gz
-eef314208adb8898d58f1e809ff7699de203ae341a5c70109051e536cb7f1ba1  linux-libmaxminddb-1.3.2+3.tar.gz
-d505e8ebb063cd6ea5d548cdc3873e37530c8e624b40d8b1f181237e01511e21  linux-libressl-2.8.3+1.tar.gz
-551dc1050148e6c6ee901b0dec65f77cbf84606684768441cdbd12f81c42ee5f  linux-measurement-kit-0.9.1+1.tar.gz
+5fb0689534f0f7cb9c1666a7017e5dd695ccd08a9fb13e53ef9a37ecc77aacb6  linux-curl-7.63.0+2.tar.gz
+fefdf9fb7136642c1279d9f6bb92178e6521954fb5f1a67ff658a24fd2a6f8ef  linux-libevent-2.1.8+4.tar.gz
+33229d0b51926bef40ace5faa30ee772c742a67cfafda4c1ba18dcb7da9e2830  linux-libmaxminddb-1.3.2+3.tar.gz
+9c4ae7fa8ae88c98d153297dd9d785fe3bae03268d4602c62d9ec56579b5b42f  linux-libressl-2.8.3+1.tar.gz
+381fea7ced3ba63b6a064cd374423b85d1079cfeba52a6879bac795575c36e83  linux-measurement-kit-0.9.1+1.tar.gz
 END
 )
 
