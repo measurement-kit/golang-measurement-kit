@@ -43,17 +43,20 @@ def get_package_versions():
     return pkg_versions
 
 def get_special_cgo_lines(arch, platform):
-    if arch == "windows" and platform == "amd64":
+    if platform == "windows" and arch == "amd64":
         return """// #cgo windows LDFLAGS: -static
 // #cgo windows,amd64 LDFLAGS: -lws2_32"""
 
-    if platform == "linux" and platform == "amd64":
+    if platform == "linux" and arch == "amd64":
         return "// #cgo linux,amd64 LDFLAGS: -lm"
 
 def main():
     package_versions = get_package_versions()
     for mk_arch, arch in arch_map.items():
         for mk_platform, platform in plat_map.items():
+            line = get_special_cgo_lines(arch, platform)
+            if line:
+                print(line)
             print(tmpl.format(
                 mk_platform=mk_platform,
                 platform=platform,
