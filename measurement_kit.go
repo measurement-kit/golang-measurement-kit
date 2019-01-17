@@ -3,7 +3,6 @@ package mk
 /*
 #include <measurement_kit/ffi.h>
 */
-// #cgo darwin LDFLAGS: -lc++
 // #cgo darwin,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/macos/measurement-kit/0.9.1+1/x86_64/include
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
 // #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/curl/7.63.0+2/x86_64/lib/libcurl.a
@@ -25,9 +24,9 @@ package mk
 // #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
 // #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libressl/2.8.3+1/x86_64/lib/libcrypto.a
 // #cgo windows,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/mingw/libressl/2.8.3+1/x86_64/lib/libssl.a
-// #cgo windows,amd64 LDFLAGS: -lws2_32 -lstdc++
+// #cgo windows,amd64 LDFLAGS: -lws2_32
 //
-// #cgo linux,amd64 LDFLAGS: -lstdc++ -lm
+// #cgo linux,amd64 LDFLAGS: -lm
 // #cgo linux,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/linux/measurement-kit/0.9.1+1/x86_64/include
 // #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
 // #cgo linux,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/linux/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
