@@ -17,6 +17,14 @@ brew tap measurement-kit/measurement-kit
 brew install measurement-kit
 ```
 
+If you've already installed `measurement-kit`, do:
+
+```bash
+brew upgrade
+```
+
+to make sure you're on the latest released version.
+
 Then you're all set. Just `go get -v ./...` as usual.
 
 ### MinGW
