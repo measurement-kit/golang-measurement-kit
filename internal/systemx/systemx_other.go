@@ -1,4 +1,4 @@
-// +build !darwin
+// +build !darwin,!linux
 
 // Package systemx contains system extensions.
 package systemx

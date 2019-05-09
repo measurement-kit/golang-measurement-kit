@@ -27,6 +27,25 @@ to make sure you're on the latest released version.
 
 Then you're all set. Just `go get -v ./...` as usual.
 
+### Linux
+
+We have a Docker container. Enter into the container with:
+
+```bash
+docker run -it -v `pwd`:/go/src/github.com/measurement-kit/go-measurement-kit \
+  openobservatory/mk-alpine:20190509
+```
+
+Once in the container, do:
+
+```bash
+export GOPATH=/go
+apk add go
+cd /go/src/github.com/measurement-kit/go-measurement-kit
+```
+
+Then you're all set. Just `go get -v ./...` as usual.
+
 ### MinGW
 
 Run `./download-libs.sh` to download the prebuilt libraries for all platforms.
