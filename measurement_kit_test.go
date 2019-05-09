@@ -34,8 +34,8 @@ func TestTelegram(t *testing.T) {
 	nt := NewNettest("Telegram")
 	nt.Options = NettestOptions{
 		DisableCollector: true,
-		GeoIPASNPath:     "testdata/GeoLite2-ASN.mmdb",
-		GeoIPCountryPath: "testdata/GeoLite2-Country.mmdb",
+		GeoIPASNPath:     "testdata/asn.mmdb",
+		GeoIPCountryPath: "testdata/country.mmdb",
 		CaBundlePath:     "testdata/cert.pem",
 		OutputPath:       outputPath,
 	}

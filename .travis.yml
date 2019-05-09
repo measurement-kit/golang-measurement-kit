@@ -1,12 +1,11 @@
 matrix:
   include:
-  - os: linux
-    dist: xenial
-  - os: osx
-language: go
-go: 1.x
-install:
-- ./download-libs.sh
+  - dist: xenial
+    language: minimal
+    os: linux
+    services:
+    - docker
+    ###- os: osx    # TODO(bassosimone): we need pre-compiled MK
 script:
-- go build -x .
-- make test
+- ./script/download-mmdb.sh
+- ./script/build-travis-${TRAVIS_OS_NAME}.sh
