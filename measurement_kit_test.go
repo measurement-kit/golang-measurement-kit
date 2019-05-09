@@ -36,7 +36,7 @@ func TestTelegram(t *testing.T) {
 		DisableCollector: true,
 		GeoIPASNPath:     "testdata/asn.mmdb",
 		GeoIPCountryPath: "testdata/country.mmdb",
-		CaBundlePath:     "testdata/cert.pem",
+		CaBundlePath:     "testdata/ca-bundle.pem",
 		OutputPath:       outputPath,
 	}
 	nt.On("log", func(e Event) {
