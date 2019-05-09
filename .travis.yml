@@ -1,8 +1,8 @@
 matrix:
   include:
-    - os: linux
-      dist: xenial
-    - os: osx
+  - os: linux
+    dist: xenial
+  - os: osx
 language: go
 go: 1.x
 install:
