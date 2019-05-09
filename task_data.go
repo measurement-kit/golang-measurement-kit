@@ -4,6 +4,8 @@ import "C"
 import (
 	"encoding/json"
 	"unsafe"
+
+	"github.com/measurement-kit/go-measurement-kit/internal/systemx"
 )
 
 // TaskData contains the measurement_kit task_data structure
@@ -68,7 +70,7 @@ func MakeTaskData(nt *Nettest) (*TaskData, error) {
 
 			GeoIPCountryPath: nt.Options.GeoIPCountryPath,
 			GeoIPASNPath:     nt.Options.GeoIPASNPath,
-			CaBundlePath:     nt.Options.CaBundlePath,
+			CaBundlePath:     systemx.CABundlePath(nt.Options.CaBundlePath),
 		},
 		OutputFilePath: nt.Options.OutputPath,
 		Annotations:    nt.Options.Annotations,

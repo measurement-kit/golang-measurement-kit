@@ -3,16 +3,16 @@ package mk
 /*
 #include <measurement_kit/ffi.h>
 */
-// #cgo darwin,amd64 CFLAGS: -I${SRCDIR}/libs/MK_DIST/macos/measurement-kit/0.9.1+1/x86_64/include
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/measurement-kit/0.9.1+1/x86_64/lib/libmeasurement_kit.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libmaxminddb/1.3.2+3/x86_64/lib/libmaxminddb.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/curl/7.63.0+2/x86_64/lib/libcurl.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_openssl.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libressl/2.8.3+1/x86_64/lib/libssl.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libressl/2.8.3+1/x86_64/lib/libcrypto.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_core.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_extra.a
-// #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/libs/MK_DIST/macos/libevent/2.1.8+4/x86_64/lib/libevent_pthreads.a
+// #cgo darwin,amd64 LDFLAGS: -L/usr/local/opt/openssl/lib
+// #cgo darwin,amd64 LDFLAGS: /usr/local/lib/libmeasurement_kit.a
+// #cgo darwin,amd64 LDFLAGS: /usr/local/opt/libevent/lib/libevent_core.a
+// #cgo darwin,amd64 LDFLAGS: /usr/local/opt/libevent/lib/libevent_extra.a
+// #cgo darwin,amd64 LDFLAGS: /usr/local/opt/libevent/lib/libevent_openssl.a
+// #cgo darwin,amd64 LDFLAGS: /usr/local/opt/libevent/lib/libevent_pthreads.a
+// #cgo darwin,amd64 LDFLAGS: /usr/local/opt/libmaxminddb/lib/libmaxminddb.a
+// #cgo darwin,amd64 LDFLAGS: /usr/local/opt/openssl/lib/libssl.a
+// #cgo darwin,amd64 LDFLAGS: /usr/local/opt/openssl/lib/libcrypto.a
+// #cgo darwin,amd64 LDFLAGS: -lcurl
 //
 // #cgo windows LDFLAGS: -static
 // #cgo windows,amd64 LDFLAGS: -lws2_32

@@ -8,15 +8,28 @@ Do not use it for anything serious, for the moment.
 
 ## Getting started
 
+### macOS
+
+Install Measurement Kit using brew:
+
+```bash
+brew tap measurement-kit/measurement-kit
+brew install measurement-kit
+```
+
+Then you're all set. Just `go get -v ./...` as usual.
+
+### MinGW
+
 Run `./download-libs.sh` to download the prebuilt libraries for all platforms.
 
 You can also specify just a single plaform with:
 
 ```
-./download-libs.sh macos
+./download-libs.sh mingw
 ```
 
-Supported platforms are: `macos`, `mingw`
+Supported platforms are: `mingw`
 
 
 ## Examples
