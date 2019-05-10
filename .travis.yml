@@ -6,8 +6,7 @@ matrix:
     services:
     - docker
   - os: osx
-    language: go
-    go: 1.12.x
+    language: minimal
 script:
 - ./script/download-mmdb.sh
 - ./script/build-travis-${TRAVIS_OS_NAME}.sh
