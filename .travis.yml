@@ -5,8 +5,9 @@ matrix:
     os: linux
     services:
     - docker
-  - os: osx
-    language: minimal
+  - language: minimal
+    os: osx
+    osx_image: xcode10.2
 script:
 - ./script/download-mmdb.sh
 - ./script/build-travis-${TRAVIS_OS_NAME}.sh
