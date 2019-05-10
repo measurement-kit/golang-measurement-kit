@@ -5,7 +5,7 @@ matrix:
     os: linux
     services:
     - docker
-    ###- os: osx    # TODO(bassosimone): we need pre-compiled MK
+  - os: osx
 script:
 - ./script/download-mmdb.sh
 - ./script/build-travis-${TRAVIS_OS_NAME}.sh
